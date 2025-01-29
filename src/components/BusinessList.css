@@ -1,0 +1,30 @@
+.business-list {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .business-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33% - 20px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .business-card:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .business-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #2c3e50;
+  }
+  
+  .business-card p {
+    font-size: 14px;
+    color: #7f8c8d;
+  }
+  

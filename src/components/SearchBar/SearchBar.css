@@ -1,0 +1,127 @@
+.search-bar {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-bar.focused .search-container {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-icon {
+  color: white;
+  margin: 0 0.75rem;
+  opacity: 0.8;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  color: white;
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.2s ease-out;
+}
+
+.suggestion-category {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.suggestion-pill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+  background: #f3f4f6;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestion-pill:hover {
+  background: #e5e7eb;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .search-suggestions {
+    background: #1f2937;
+  }
+
+  .suggestion-category {
+    color: #9ca3af;
+  }
+
+  .suggestion-pill {
+    background: #374151;
+    color: #f3f4f6;
+  }
+
+  .suggestion-pill:hover {
+    background: #4b5563;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .search-container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .search-input {
+    margin: 0.5rem 0;
+    width: calc(100% - 1.5rem);
+  }
+}

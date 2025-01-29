@@ -1,0 +1,89 @@
+/* Layout Styles */
+.min-h-screen {
+  padding-top: 64px; /* Adjust this value to match your navbar height */
+}
+
+/* About Page Styles */
+.team-member-card {
+  transition: all 0.3s ease;
+}
+
+.team-member-card:hover {
+  transform: translateY(-4px);
+}
+
+.team-member-image {
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Contact Page Styles */
+.contact-form {
+  background: var(--background);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  transform: translateY(-2px);
+}
+
+/* FAQ Page Styles */
+.faq-item {
+  background: var(--background);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateX(4px);
+}
+
+/* Dark Mode Styles */
+@media (prefers-color-scheme: dark) {
+  .auth-form,
+  .contact-form,
+  .faq-item {
+    background: #1f2937;
+    border-color: #374151;
+  }
+
+  .auth-form input,
+  .contact-form input,
+  .contact-form textarea {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+
+  .faq-item h3 {
+    color: #f9fafb;
+  }
+
+  .faq-item p {
+    color: #9ca3af;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .min-h-screen {
+    padding-top: 56px; /* Slightly smaller padding for mobile */
+  }
+
+  .auth-container,
+  .contact-container {
+    padding: 1rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
